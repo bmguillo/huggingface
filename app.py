@@ -24,7 +24,7 @@ user_input = st.text_area("Enter your text prompt:", "Type something here...")
 @st.cache_resource
 def load_model(model_name):
    
-    return pipeline("text-generation", model=model_name, framework="tf"))
+    return pipeline("text-generation", model=model_name, framework="tf")
 
 # Button to run the model
 if st.button("Generate Response"):
