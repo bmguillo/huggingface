@@ -14,6 +14,16 @@ models = [
     "ibm-granite/granite-3.0-8b-instruct",
     "bartowski/Meta-Llama-3.1-8B-Claude-GGUF"
 ]
+
+class LLM:
+    def __init__(self, model_name, token=None):
+        self.model = pipeline('text2text-generation', model=model_name, token=token)
+
+    def predict(self, prompt, **kwargs):
+        return self.model(text_inputs=prompt, **kwargs)[0]["generated_text"]
+
+model = LLM(model_name=model_name, token="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")
+
 selected_model = st.selectbox("Select a model to test:", models)
 
 # Text input for user prompt
