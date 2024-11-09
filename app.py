@@ -15,14 +15,16 @@ models = [
     "bartowski/Meta-Llama-3.1-8B-Claude-GGUF"
 ]
 
-class LLM:
-    def __init__(self, model_name, token=None):
-        self.model = pipeline('text2text-generation', model=model_name, token=token)
 
-    def predict(self, prompt, **kwargs):
-        return self.model(text_inputs=prompt, **kwargs)[0]["generated_text"]
 
-model = LLM(model_name=model_name, token="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")
+#model = LLM(model_name="meta-llama/Llama-3.2-3B-Instruct", token="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")
+
+#model = LLM(model_name="mistralai/Mistral-7B-Instruct-v0.3", token="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")
+
+#model = LLM(model_name="ibm-granite/granite-3.0-8b-instruct", token="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")
+
+model = LLM(model_name="bartowski/Meta-Llama-3.1-8B-Claude-GGUF", token="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")
+
 
 selected_model = st.selectbox("Select a model to test:", models)
 
@@ -34,8 +36,16 @@ user_input = st.text_area("Enter your text prompt:", "Type something here...")
 # Load the selected model using the pipeline
 @st.cache_resource
 def load_model(model_name):
-   
+  
     return pipeline("text-generation", model=model_name, framework="tf")
+
+class LLM:
+    def __init__(self, model_name, token=None):
+        self.model = pipeline('text2text-generation', model=model_name, token="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")
+
+    def predict(self, prompt, **kwargs):
+        return self.model(text_inputs=prompt, **kwargs)[0]["generated_text"]
+        
 
 # Button to run the model
 if st.button("Generate Response"):
