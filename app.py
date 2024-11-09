@@ -2,7 +2,7 @@ import streamlit as st
 from transformers import pipeline
 import warnings
 import torch
-print(torch.__version__)
+
 
 # Title for the web app
 st.title("Test Large Language Models from Hugging Face")
@@ -18,6 +18,8 @@ selected_model = st.selectbox("Select a model to test:", models)
 # Text input for user prompt
 user_input = st.text_area("Enter your text prompt:", "Type something here...")
 
+
+
 # Load the selected model using the pipeline
 @st.cache_resource
 def load_model(model_name):
@@ -31,7 +33,7 @@ if st.button("Generate Response"):
         
         # Generate text based on the input
         with st.spinner("Generating response..."):
-            result = generator(user_input, max_length=100, num_return_sequences=1)
+            result = generator(user_input, max_length=100, num_return_sequences=1,truncation=True)
             
         # Display the result
         st.subheader("Generated Response:")
