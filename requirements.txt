@@ -1,6 +1,6 @@
-streamlit==1.25.0  # Ensure compatibility with the latest version
-transformers==4.45.0  # Use a recent version for model support
-torch>=2.0.0  # Required for running models like GPT
-pillow==9.5.0
-pandas>2.0
-numpy<=1.25.1
+streamlit
+transformers
+torch
+pillow
+pandas
+numpy
