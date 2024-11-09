@@ -1,0 +1,3 @@
+streamlit==1.25.0  # Ensure compatibility with the latest version
+transformers==4.33.0  # Use a recent version for model support
+torch>=2.0.0  # Required for running models like GPT
