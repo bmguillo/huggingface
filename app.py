@@ -23,7 +23,7 @@ models = [
 
 #model = LLM(model_name="ibm-granite/granite-3.0-8b-instruct", token="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")
 
-model = LLM(model_name="bartowski/Meta-Llama-3.1-8B-Claude-GGUF", token="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")
+#model = LLM(model_name="bartowski/Meta-Llama-3.1-8B-Claude-GGUF", token="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")
 
 
 selected_model = st.selectbox("Select a model to test:", models)
