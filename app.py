@@ -1,6 +1,8 @@
 import streamlit as st
 from transformers import pipeline
 import warnings
+import torch
+print(torch.__version__)
 
 # Title for the web app
 st.title("Test Large Language Models from Hugging Face")
