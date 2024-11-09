@@ -1,7 +1,7 @@
 import streamlit as st
 from transformers import pipeline
 import warnings
-import torch
+
 
 
 # Title for the web app
