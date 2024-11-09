@@ -1,6 +1,5 @@
 streamlit
 transformers
+torch
 pillow
-pandas
-numpy
-pytorch==1.0.2
+
