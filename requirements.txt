@@ -8,7 +8,7 @@ pandas
 pillow
 safetensors
 transformers
-
+tf-keras
 
 
 
