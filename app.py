@@ -10,10 +10,7 @@ st.title("Test Large Language Models from Hugging Face")
 # Dropdown for model selection
 models = [
     "gpt2",
-    "EleutherAI/gpt-neo-2.7B",
     "facebook/opt-125m",
-    "bigscience/bloom-560m",
-    "bert-base-uncased",
     "distilgpt2"
 ]
 selected_model = st.selectbox("Select a model to test:", models)
