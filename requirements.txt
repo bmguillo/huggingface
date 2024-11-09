@@ -1,7 +1,6 @@
 streamlit
 #transformers
-#torch
+torch
 transformers==4.33.0
-torch==1.31.1
 pillow
 
