@@ -5,11 +5,17 @@ import warnings
 from huggingface_hub import login
 
 
+
+
 st.write(
 	#"Has environment variables been set:",
 	os.environ["HF_ACCESS_TOKEN"] == st.secrets["HF_ACCESS_TOKEN"])
 
-login(token = "HF_ACCESS_TOKEN")
+hf_api_token = st.secrets["HF_ACCESS_TOKEN"]
+
+login(token=hf_api_token)
+
+
 
 # Title for the web app
 st.title("Test Large Language Models from Hugging Face")
