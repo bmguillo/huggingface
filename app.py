@@ -2,7 +2,7 @@ import os
 import streamlit as st
 from transformers import pipeline
 import warnings
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 
 
 st.write("HF_ACCESS_TOKEN", st.secrets["HF_ACCESS_TOKEN"])
