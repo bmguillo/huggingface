@@ -5,12 +5,9 @@ import warnings
 #from dotenv import load_dotenv
 
 
-st.write("HF_ACCESS_TOKEN", st.secrets["HF_ACCESS_TOKEN"])
-
 st.write(
 	"Has environment variables been set:",
 	os.environ["HF_ACCESS_TOKEN"] == st.secrets["HF_ACCESS_TOKEN"])
-
 
 # Title for the web app
 st.title("Test Large Language Models from Hugging Face")
@@ -22,7 +19,6 @@ models = [
     "ibm-granite/granite-3.0-8b-instruct",
     "bartowski/Meta-Llama-3.1-8B-Claude-GGUF"
 ]
-
 
 selected_model = st.selectbox("Select a model to test:", models)
 
