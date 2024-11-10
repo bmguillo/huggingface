@@ -1,7 +1,11 @@
+import os
 import streamlit as st
 from transformers import pipeline
 import warnings
 
+st.write(
+	"Has environment variables been set:",
+	os.environ["HF_ACCESS_TOKEN"] == st.secrets["HF_ACCESS_TOKEN])
 
 
 # Title for the web app
@@ -22,17 +26,13 @@ selected_model = st.selectbox("Select a model to test:", models)
 user_input = st.text_area("Enter your text prompt:", "Type something here...")
 
 
-
 # Load the selected model using the pipeline
 @st.cache_resource
 def load_model(model_name):
-  
-    return pipeline("text-generation", model=model_name, framework="tf")
-
   with warnings.catch_warnings():
         warnings.simplefilter("ignore")
-    access_token = os.getenv("HF_ACCESS_TOKEN")  # Use an environment variable for the access token
-    return pipeline("text-generation", model=model_name, framework="tf", use_auth_token=access_token)  # Use TensorFlow framework
+        access_token = os.getenv("HF_ACCESS_TOKEN")  # Use an environment variable for the access token
+        return pipeline("text-generation", model=model_name, framework="tf", use_auth_token=access_token)  # Use TensorFlow framework
         
 
 # Button to run the model
