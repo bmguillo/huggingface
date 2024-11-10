@@ -2,12 +2,14 @@ import os
 import streamlit as st
 from transformers import pipeline
 import warnings
-#from dotenv import load_dotenv
+from huggingface_hub import login
 
 
 st.write(
 	#"Has environment variables been set:",
 	os.environ["HF_ACCESS_TOKEN"] == st.secrets["HF_ACCESS_TOKEN"])
+
+login(token = "HF_ACCESS_TOKEN")
 
 # Title for the web app
 st.title("Test Large Language Models from Hugging Face")
