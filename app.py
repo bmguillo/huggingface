@@ -43,7 +43,7 @@ def load_model(model_name):
   with warnings.catch_warnings():
         warnings.simplefilter("ignore")
         access_token = os.getenv("HF_ACCESS_TOKEN")  # Use an environment variable for the access token
-        return pipeline("text-generation", model=model_name, framework="tf", use_auth_token=access_token)  # Use TensorFlow framework
+        return pipeline("text-generation", model=model_name, use_auth_token=access_token)  # Use TensorFlow framework
         
 
 # Button to run the model
