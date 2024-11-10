@@ -9,6 +9,7 @@ pillow
 safetensors
 transformers
 tf-keras
+torch
 
 
 
