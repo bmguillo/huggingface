@@ -7,9 +7,6 @@ from huggingface_hub import login
 import torch
 
 
-
-
-
 st.write(
 	#"Has environment variables been set:",
 	os.environ["HF_ACCESS_TOKEN"] == st.secrets["HF_ACCESS_TOKEN"])
