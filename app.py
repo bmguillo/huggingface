@@ -16,16 +16,6 @@ models = [
 ]
 
 
-
-#model = LLM(model_name="meta-llama/Llama-3.2-3B-Instruct", token="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")
-
-#model = LLM(model_name="mistralai/Mistral-7B-Instruct-v0.3", token="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")
-
-#model = LLM(model_name="ibm-granite/granite-3.0-8b-instruct", token="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")
-
-#model = LLM(model_name="bartowski/Meta-Llama-3.1-8B-Claude-GGUF", token="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")
-
-
 selected_model = st.selectbox("Select a model to test:", models)
 
 # Text input for user prompt
@@ -39,12 +29,10 @@ def load_model(model_name):
   
     return pipeline("text-generation", model=model_name, framework="tf")
 
-class LLM:
-    def __init__(self, model_name, token=None):
-        self.model = pipeline('text2text-generation', model=model_name, token="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")
-
-    def predict(self, prompt, **kwargs):
-        return self.model(text_inputs=prompt, **kwargs)[0]["generated_text"]
+  with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+    access_token = os.getenv("HF_ACCESS_TOKEN")  # Use an environment variable for the access token
+    return pipeline("text-generation", model=model_name, framework="tf", use_auth_token=access_token)  # Use TensorFlow framework
         
 
 # Button to run the model
