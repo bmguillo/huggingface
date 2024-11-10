@@ -9,7 +9,7 @@ st.write("HF_ACCESS_TOKEN", st.secrets["HF_ACCESS_TOKEN"])
 
 st.write(
 	"Has environment variables been set:",
-	os.environ["HF_ACCESS_TOKEN"] == st.secrets["HF_ACCESS_TOKEN])
+	os.environ["HF_ACCESS_TOKEN"] == st.secrets["HF_ACCESS_TOKEN"])
 
 
 # Title for the web app
