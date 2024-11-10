@@ -1,5 +1,6 @@
 import os
 import streamlit as st
+import transformers
 from transformers import pipeline
 import warnings
 from huggingface_hub import login
