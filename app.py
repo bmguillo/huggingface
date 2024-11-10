@@ -6,7 +6,7 @@ import warnings
 
 
 st.write(
-	"Has environment variables been set:",
+	#"Has environment variables been set:",
 	os.environ["HF_ACCESS_TOKEN"] == st.secrets["HF_ACCESS_TOKEN"])
 
 # Title for the web app
