@@ -24,7 +24,6 @@ st.title("Test Large Language Models from Hugging Face")
 models = [
     "meta-llama/Llama-3.2-3B-Instruct",
     "mistralai/Mistral-7B-Instruct-v0.3",
-    "ibm-granite/granite-3.0-8b-instruct",
     "bartowski/Meta-Llama-3.1-8B-Claude-GGUF"
 ]
 
